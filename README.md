@@ -3,115 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banco Gratidão - Bem-vindo</title>
-<script src="https://sdk.mercadopago.com/js/v2"></script>
+<title>BANCO GRATIDÃO OFICIAL</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family: Inter, sans-serif}
-body{background:#111;color:#fff;min-height:100vh}
-.container{max-width:420px;margin:0 auto;padding:20px}
-.header{text-align:center;padding:30px 0}
-.logo{font-size:32px;font-weight:800;color:#8A05BE}
-.card{background:#1c1c1e;border-radius:16px;padding:20px;margin-bottom:16px}
-.btn{width:100%;padding:16px;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:12px}
-.btn-primary{background:#8A05BE;color:#fff}
-.btn-dark{background:#2c2c2e;color:#fff}
-.btn-outline{background:transparent;border:1px solid #8A05BE;color:#8A05BE}
-.hidden{display:none}
-.input{width:100%;padding:14px;border-radius:10px;border:1px solid #333;background:#2c2c2e;color:#fff;margin-top:10px}
-.pix-key{background:#2c2c2e;padding:12px;border-radius:10px;text-align:center;margin:10px 0;font-weight:bold;color:#00E676}
-.saldo{font-size:32px;font-weight:800;margin:10px 0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0a;color:#fff;font-family:system-ui,sans-serif;min-height:100vh}
+.header{padding:25px;text-align:center;background:linear-gradient(180deg,#1a1a1a,#000);border-bottom:1px solid #222}
+.header h1{font-size:28px}
+.header p{color:#8a8a8a;margin-top:6px;font-size:13px}
+.container{max-width:500px;margin:0 auto;padding:20px}
+.card{background:#17171a;border:1px solid #2a2a2a;border-radius:24px;padding:22px;margin-bottom:16px}
+.btn-main{width:100%;padding:22px;border-radius:20px;border:0;font-size:18px;font-weight:800;cursor:pointer;display:flex;justify-content:space-between;text-align:left;margin-bottom:14px}
+.btn1{background:#fff;color:#000} .btn2{background:#820ad1;color:#fff} .btn3{background:#00d26a;color:#000}
+.btn-sub{width:100%;padding:16px;border-radius:14px;border:1px solid #333;background:#212124;color:#fff;font-size:15px;margin-top:10px;cursor:pointer;text-align:left}
+.btn-sub.ativo{background:#fff;color:#000;font-weight:bold}
+.btn-action{background:#820ad1;color:#fff;border:0;width:100%;padding:18px;border-radius:14px;font-weight:800;font-size:16px;margin-top:18px;cursor:pointer}
+.input{width:100%;padding:16px;border-radius:12px;border:1px solid #333;background:#111;color:#fff;margin-top:10px;font-size:15px}
+.view{display:none} .view.ativa{display:block}
+.topbar{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.back{width:40px;height:40px;border-radius:12px;background:#222;border:1px solid #333;color:#fff;font-size:20px}
+.saldo{font-size:42px;font-weight:900;margin:10px 0}
+.pix-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin:18px 0}
+.pix-item{background:#212124;border:1px solid #333;border-radius:18px;padding:14px 5px;text-align:center;font-size:12px;cursor:pointer}
+.tag{background:#00d26a;color:#000;font-size:11px;padding:4px 8px;border-radius:20px;font-weight:800;display:inline-block;margin-bottom:8px}
+.invite-box{background:linear-gradient(135deg,#820ad1,#4a0080);border-radius:20px;padding:20px;text-align:center}
+.link-box{background:#000;border:1px dashed #444;padding:12px;border-radius:10px;margin:12px 0;color:#aaa;font-size:13px;word-break:break-all}
+.pix-key{background:#000;border:1px solid #00d26a;color:#00d26a;padding:12px;border-radius:10px;margin:10px 0;text-align:center;font-weight:bold;letter-spacing:1px}
 </style>
 </head>
 <body>
+<div class="header"><h1>BANCO GRATIDÃO</h1><p>Banco Oficial • Pix Mercado Pago • 41 99893-6718</p></div>
 <div class="container">
 
-<div id="tela-inicial">
-<div class="header">
-<div class="logo">BANCO GRATIDÃO</div>
-<p>Escolha uma opção para continuar</p>
-</div>
-
-<button class="btn btn-primary" onclick="abrirTela('tela-mensagens')">1 - Abrir Conta de Mensagens</button>
-<button class="btn btn-primary" onclick="abrirTela('tela-cadastro')">2 - Entrar no Banco Gratidão Real</button>
-<button class="btn btn-primary" onclick="abrirTela('tela-convite')">3 - Convidar Membros e Ganhar R$3</button>
-
-<div class="card" style="margin-top:20px">
-<p style="font-size:13px;color:#aaa">Pix oficial: 41 99893-6718 - Mercado Pago</p>
-</div>
-</div>
-
-<div id="tela-mensagens" class="hidden">
-<h2>Como quer receber?</h2>
-<button class="btn btn-dark" onclick="alert('Ativado: Receber em ÁUDIO')">Receber em Áudio</button>
-<button class="btn btn-dark" onclick="alert('Ativado: Receber em TEXTO')">Receber em Texto</button>
-<button class="btn btn-dark" onclick="alert('Ativado: Receber em AMBAS')">Receber em Áudio + Texto</button>
-<button class="btn btn-outline" onclick="abrirTela('tela-inicial')">Voltar</button>
-</div>
-
-<div id="tela-cadastro" class="hidden">
-<h2>Cadastro - Banco Real</h2>
+<div id="home" class="view ativa">
 <div class="card">
-<input class="input" placeholder="Nome completo">
-<input class="input" placeholder="CPF">
-<input class="input" placeholder="RG / CNH">
-<input class="input" type="file" id="doc">
-<p style="font-size:12px;color:#aaa;margin-top:8px">Envie foto do documento</p>
-<button class="btn btn-primary" onclick="abrirTela('tela-banco')">Criar Conta Gratidão</button>
+<p style="color:#888;font-size:13px;margin-bottom:14px">ESCOLHA UMA OPÇÃO</p>
+<button class="btn-main btn1" onclick="abrir('msg')">💬 Abrir Conta de Mensagens <span>→</span></button>
+<button class="btn-main btn2" onclick="abrir('banco')">🏦 Entrar no Banco Real <span>→</span></button>
+<button class="btn-main btn3" onclick="abrir('convite')">🎁 Convidar e Ganhar R$3 <span>→</span></button>
 </div>
-<button class="btn btn-outline" onclick="abrirTela('tela-inicial')">Voltar</button>
 </div>
 
-<div id="tela-banco" class="hidden">
-<div class="header"><div class="logo">Nubank Style</div></div>
+<div id="msg" class="view">
+<div class="topbar"><button class="back" onclick="abrir('home')">‹</button><b>Conta de Mensagens</b></div>
 <div class="card">
-<p>Saldo disponível</p>
-<div class="saldo">R$ 0,00</div>
+<h3>Como quer receber?</h3>
+<button class="btn-sub" onclick="setMsg(this,'audio')">🎙️ Mensagens em ÁUDIO</button>
+<button class="btn-sub" onclick="setMsg(this,'texto')">💬 Mensagens em TEXTO</button>
+<button class="btn-sub" onclick="setMsg(this,'ambos')">🔊💬 ÁUDIO + TEXTO</button>
+<button class="btn-action" onclick="salvarMsg()">Salvar Preferência</button>
+<p id="msgOk" style="display:none;color:#00d26a;text-align:center;margin-top:12px;font-weight:bold">✅ Salvo! Você vai receber diariamente.</p>
+</div>
+</div>
+
+<div id="banco" class="view">
+<div class="topbar"><button class="back" onclick="abrir('home')">‹</button><b>Banco Gratidão Real</b></div>
+<div id="cadastro" class="card">
+<span class="tag">CADASTRO SEGURO</span>
+<h3>Crie sua conta digital</h3>
+<input class="input" id="nome" placeholder="Nome completo">
+<input class="input" id="cpf" placeholder="CPF">
+<input class="input" placeholder="RG ou CNH">
+<input class="input" placeholder="WhatsApp">
+<input class="input" type="file"><p style="color:#666;font-size:11px;margin-top:6px">Foto do documento</p>
+<button class="btn-action" onclick="abrirBanco()">Criar Conta e Entrar →</button>
+</div>
+
+<div id="bancoReal" style="display:none">
+<div class="card" style="background:#820ad1;border:0">
+<p style="opacity:.8;font-size:13px">Saldo disponível</p>
+<div class="saldo">R$ 1.247,83</div>
+<p style="opacity:.8;font-size:12px">Ag: 0001 • Conta: 887412-3</p>
+<p style="opacity:.8;font-size:12px;margin-top:4px" id="nomeBanco">Titular: Banco Gratidão</p>
 </div>
 <div class="card">
-<h3>Área Pix</h3>
-<div class="pix-key" id="pixkey">Chave: 41 99893-6718</div>
-<button class="btn btn-dark" onclick="copiarPix()">Copiar Chave Pix</button>
-<button class="btn btn-primary" onclick="pagarMercadoPago()">Receber via Mercado Pago</button>
-<button class="btn btn-dark" onclick="alert('Pix enviado! (simulação)')">Fazer Pix</button>
-<div id="mp-checkout" style="margin-top:15px"></div>
+<h4>Pix Mercado Pago</h4>
+<div class="pix-key">CHAVE PIX: (41) 99893-6718</div>
+<p style="color:#888;font-size:12px;text-align:center">Banco Gratidão Oficial • Recebimentos via Mercado Pago</p>
+<div class="pix-grid">
+<div class="pix-item" onclick="pix('enviar')">💸<br>Enviar</div>
+<div class="pix-item" onclick="pix('receber')">📥<br>Receber</div>
+<div class="pix-item" onclick="alert('QR Code Pix gerado para (41) 99893-6718')">🔳<br>QR Code</div>
+<div class="pix-item" onclick="alert('Link Mercado Pago: mpago.la/bancogratidao-'+Date.now())">🔗<br>Link MP</div>
 </div>
-<button class="btn btn-outline" onclick="abrirTela('tela-inicial')">Sair</button>
+<button class="btn-action" style="background:#fff;color:#000" onclick="copiarPix()">📋 Copiar Chave Pix (41) 99893-6718</button>
+<button class="btn-sub" onclick="alert('Chave Pix copiada! Cole no seu banco para fazer um Pix para o Banco Gratidão')">Gerar Código Copia e Cola Mercado Pago</button>
+</div>
+<div class="card"><h4>Extrato</h4><p style="margin-top:10px;font-size:14px">✅ Pix recebido - R$ 250,00 - via Mercado Pago</p><p style="font-size:14px;color:#888;margin-top:8px">✅ Recompensa - R$ 3,00 - Convite</p></div>
+</div>
 </div>
 
-<div id="tela-convite" class="hidden">
-<h2>Convide e Ganhe R$3</h2>
-<div class="card">
-<p>Ganhe <b style="color:#00E676">R$3,00</b> por cada amigo que criar conta!</p>
-<p style="margin-top:10px;font-size:13px">Seu link:</p>
-<div class="pix-key">https://bancogratidaooficial-ops.github.io/Bem-vindo-/?ref=VOCE</div>
-<button class="btn btn-primary" onclick="alert('Link copiado!')">Copiar Link de Convite</button>
-<div class="card" style="margin-top:15px">
-<p>Saldo de indicações: <b>R$ 0,00</b></p>
-<p style="font-size:12px;color:#aaa">Pagamento via Pix - chave 41 99893-6718 - Mercado Pago</p>
+<div id="convite" class="view">
+<div class="topbar"><button class="back" onclick="abrir('home')">‹</button><b>Convidar e Ganhar</b></div>
+<div class="invite-box">
+<h2>GANHE R$ 3 POR AMIGO</h2>
+<p style="margin:10px 0;opacity:.9">Quando ele abrir a conta, você ganha na hora via Pix (41) 99893-6718</p>
+<div class="link-box" id="linkConvite">https://bancogratidaooficial-ops.github.io/BANCO-GRATIDAO/?convite=GRATIDAO3</div>
+<button class="btn-action" style="background:#fff;color:#820ad1" onclick="copiar()">Copiar Link e Compartilhar</button>
 </div>
+<div class="card" style="margin-top:16px">
+<h4>Suas recompensas</h4>
+<p style="margin-top:10px">👥 3 amigos convidados</p>
+<p>💰 R$ 9,00 ganhos (3 x R$ 3,00)</p>
+<p style="color:#888;font-size:13px;margin-top:8px">Pagamento via Pix Mercado Pago para sua chave cadastrada. Chave do banco: 41 99893-6718</p>
 </div>
-<button class="btn btn-outline" onclick="abrirTela('tela-inicial')">Voltar</button>
 </div>
 
 </div>
-
 <script>
-function abrirTela(id){
-document.querySelectorAll('[id^=tela-]').forEach(t=>t.classList.add('hidden'));
-document.getElementById(id).classList.remove('hidden');
-window.scrollTo(0,0);
+function abrir(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('ativa'));document.getElementById(id).classList.add('ativa');window.scrollTo(0,0)}
+function setMsg(el,t){document.querySelectorAll('#msg .btn-sub').forEach(b=>b.classList.remove('ativo'));el.classList.add('ativo');localStorage.setItem('tipoMsg',t)}
+function salvarMsg(){if(!localStorage.getItem('tipoMsg')){alert('Escolha uma opção');return}document.getElementById('msgOk').style.display='block'}
+function abrirBanco(){
+let n=document.getElementById('nome').value||'Cliente';document.getElementById('nomeBanco').innerText='Titular: '+n;
+document.getElementById('cadastro').style.display='none';document.getElementById('bancoReal').style.display='block';
 }
-function copiarPix(){
-navigator.clipboard.writeText('41998936718');
-alert('Chave Pix 41 99893-6718 copiada!');
-}
-function pagarMercadoPago(){
-// Integração Mercado Pago - Pix
-// Sua chave Pix: 41 99893-6718 está configurada no painel do Mercado Pago
-// Aqui cria botão de pagamento - você só precisa colocar seu Public Key do MP
-alert('Aqui o Mercado Pago vai gerar o QR Code Pix para a chave 41 99893-6718\n\nPara ativar de verdade:\n1. Crie conta no Mercado Pago\n2. Cadastre a chave 41 99893-6718\n3. Cole seu Public Key aqui no código na linha do Mp()');
-// Exemplo: const mp = new MercadoPago('SEU_PUBLIC_KEY', {locale: 'pt-BR'});
-}
+function copiarPix(){navigator.clipboard.writeText('41998936718');alert('Chave Pix 41 99893-6718 copiada!');}
+function pix(t){if(t=='receber'){copiarPix()}else{alert('Para enviar Pix, use a chave (41) 99893-6718 no seu banco ou Mercado Pago')}}
+function copiar(){navigator.clipboard.writeText(document.getElementById('linkConvite').innerText);alert('Link copiado! Ganhe R$3 por amigo');}
 </script>
 </body>
 </html>
