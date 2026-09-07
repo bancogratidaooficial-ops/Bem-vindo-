@@ -122,4 +122,4 @@ function pix(t){if(t=='receber'){copiarPix()}else{alert('Para enviar Pix, use a 
 function copiar(){navigator.clipboard.writeText(document.getElementById('linkConvite').innerText);alert('Link copiado! Ganhe R$3 por amigo');}
 </script>
 </body>
-</html>
+</html><button onclick="window.print()">Salvar Comprovante / Autenticação</button>
