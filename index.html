@@ -1,15 +1,54 @@
-<!-- QR CODE VALOR INDEFINIDO -->
-<div style="text-align:center; background:white; padding:15px; border-radius:12px; margin-top:10px">
-  <p style="color:black; font-weight:bold; margin-bottom:10px">QR Code - Valor Aberto</p>
-  <img id="qrPix" src="" style="width:220px; height:220px">
-  <p style="color:#666; font-size:12px; margin-top:8px">Escaneie e digite o valor que quiser</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Banco Gratidão</title>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
+body{background:#111;color:#fff}
+.box{max-width:400px;margin:auto;padding:20px}
+.card{background:#1e1e1e;border-radius:16px;padding:20px;margin:15px 0}
+.btn{width:100%;padding:16px;border-radius:12px;border:none;font-weight:800;margin-top:10px}
+.btn-y{background:#8A05BE;color:#fff}
+.pix{background:#2a2a2a;padding:12px;border-radius:10px;text-align:center;color:#00ff88;font-weight:bold}
+.qrbox{background:white;padding:15px;border-radius:15px;text-align:center}
+</style>
+</head>
+<body>
+<div class="box">
+<h1 style="text-align:center;color:#8A05BE">BANCO GRATIDÃO</h1>
+
+<div class="card">
+<h3>Área PIX - Valor Aberto</h3>
+<p style="font-size:13px;color:#aaa">A pessoa digita o valor que quiser</p>
+<div class="qrbox" style="margin-top:12px">
+<div id="qrcode" style="display:flex;justify-content:center"></div>
+<p style="color:black;font-size:12px;margin-top:8px">Chave: 41 99893-6718<br>José Marcos - Mercado Pago</p>
+</div>
+<div class="pix" id="copia">Chave: 41 99893-6718</div>
+<button class="btn btn-y" onclick="navigator.clipboard.writeText('41998936718');alert('Chave copiada!')">Copiar Chave Pix</button>
+<button class="btn btn-y" onclick="window.open('https://link.mercadopago.com.br/SEU_LINK_AQUI','_blank')">Pagar com Mercado Pago (Valor Livre)</button>
 </div>
 
-<script>
-  // COLOQUE AQUI O SEU LINK DO MERCADO PAGO QUE ESTÁ COM R$0,00
-  const seuLinkMercadoPago = "https://mpago.la/SEU-LINK-AQUI";
+<div class="card">
+<h3>💰 Vaga de Fundador - R$1</h3>
+<p>Pague R$1 uma vez e ganhe R$50 de bônus</p>
+<button class="btn btn-y">ABRIR MINHA CONTA - R$1</button>
+</div>
 
-  // Gera QR Code automaticamente
-  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(seuLinkMercadoPago)}`;
-  document.getElementById('qrPix').src = qrUrl;
+</div>
+<script>
+// QR CODE PIX COM VALOR INDEFINIDO
+// Payload Pix SEM valor = valor aberto
+const payloadPix = "00020126360014BR.GOV.BCB.PIX0114+55419989367185204000053039865802BR5913JOSE MARCOS6008CURITIBA62070503***6304";
+
+// TROQUE A LINHA DE BAIXO PELO SEU LINK mpago.la DO PRINT
+const linkMercadoPago = "https://mpago.la/32D7sXx"; // <<< COLOQUE SEU LINK AQUI
+
+// Gera QR - Se tiver link do MP usa ele, senão usa Pix puro
+const dadoQR = linkMercadoPago.includes("SEU_LINK") ? payloadPix : linkMercadoPago;
+new QRCode(document.getElementById("qrcode"), {text: dadoQR, width: 200, height: 200});
 </script>
+</body>
+</html>
