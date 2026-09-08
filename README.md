@@ -18,7 +18,8 @@ body{background:#0a0a0a;color:#fff;font-family:system-ui;margin:0}
 <div class="card-wrap">
   <div class="card">
     <div style="font-size:24px;font-weight:900;color:#000;letter-spacing:1px">Banco Gratidão</div>
-    <div style="margin-top:8px;font-size:14px;color:#222;font-weight:700">Roxinho Virtual •••• 7447 • Gold</div>
+    <div style="margin-top:8px;font-size:14px;color:#222;font-weight:700">dourado Virtual •••• 
+• Gold</div>
     <div style="display:flex;justify-content:space-between;align-items:end;margin-top:22px">
       <div style="width:44px;height:34px;background:linear-gradient(135deg,#ffe27a,#c9a227);border-radius:6px;border:1px solid #8a6d00"></div>
       <div style="width:46px;height:46px;background:radial-gradient(circle at 30% 30%, #ff5f00, #eb001b 40%, #f79e1b);border-radius:50%"></div>
