@@ -34,3 +34,88 @@ body{background:#000;color:#fff;max-width:450px;margin:0 auto}
 <div class="card-info">
 <div class="row">
 <div style="text-align:center" onclick="alert('Cartão bloqueado/des
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BANCO GRATIDÃO - Cartão Doutorado</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:system-ui,sans-serif;min-height:100vh}
+.header{background:linear-gradient(180deg,#820ad1,#4a0080);padding:28px 20px 60px 20px;border-radius:0 0 30px 30px}
+.header h1{text-align:center;font-size:28px;font-weight:800}
+.card-wrap{margin:-40px 16px 0 16px}
+.card{background:linear-gradient(135deg,#820ad1,#4a0080);border-radius:20px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+.card-top{display:flex;justify-content:space-between;align-items:center}
+.name{font-size:22px;font-weight:800}
+.tag{background:#ffcc00;color:#000;font-size:11px;padding:4px 10px;border-radius:20px;font-weight:800;margin-left:8px}
+.sub{margin-top:4px;opacity:.9}
+.content{max-width:500px;margin:20px auto;padding:0 16px}
+.box{background:#171717;border:1px solid #2a2a2a;border-radius:20px;padding:18px;margin-bottom:14px}
+.btn{width:100%;padding:16px;border-radius:14px;border:0;font-weight:800;font-size:15px;cursor:pointer;margin-top:10px}
+.btn-pix{background:#fff;color:#000}
+.btn-mp{background:#009ee3;color:#fff}
+.saldo{font-size:42px;font-weight:900;margin:8px 0}
+.info{color:#aaa;font-size:13px;word-break:break-all}
+.pix-key{background:#000;border:1px dashed #444;padding:12px;border-radius:10px;margin:10px 0;text-align:center;font-weight:bold;letter-spacing:1px;color:#00d26a}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Cartões virtuais</h1>
+</div>
+
+<div class="card-wrap">
+  <div class="card">
+    <div class="card-top">
+      <div style="display:flex;align-items:center"><div class="name">José Marcos</div><div class="tag">DOUTORADO</div></div>
+    </div>
+    <div class="sub">Roxinho Virtual •••• 7447 • Gold</div>
+    <div style="margin-top:16px;display:flex;gap:8px">
+      <div style="width:40px;height:30px;background:#ffcc00;border-radius:4px"></div>
+      <div style="width:40px;height:30px;background:linear-gradient(90deg,#ff5f00,#eb001b,#f79e1b);border-radius:50%;opacity:.9"></div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="box">
+    <div style="color:#888;font-size:12px">SALDO DISPONÍVEL - COFRE MERCADO PAGO</div>
+    <div class="saldo">R$ 1.247,83</div>
+    <div class="info">Ag: 0001 • Conta: 887412-3 • Titular: Banco Gratidão</div>
+    <button class="btn btn-pix" onclick="window.location.href='https://link.mercadopago.com.br/bancograti'">Ver Extrato no Mercado Pago</button>
+  </div>
+
+  <div class="box">
+    <div style="font-weight:800;margin-bottom:6px">Pix Mercado Pago - Cofre Seguro</div>
+    <div class="info">CHAVE PIX: (41) 99893-6718</div>
+    <div class="pix-key" id="chave">41998936718</div>
+    <button class="btn btn-pix" onclick="copiar()">Copiar Chave Pix</button>
+    <button class="btn btn-mp" onclick="gerarQr()">Gerar QR Code Pix</button>
+    <div id="qrcode" style="text-align:center;margin-top:14px"></div>
+    <div class="info" style="margin-top:10px;text-align:center">Banco Gratidão Oficial • Recebimento via Mercado Pago</div>
+  </div>
+
+  <div class="box">
+    <div style="font-weight:800">✅ Pix recebido - R$ 250,00 - via Mercado Pago</div>
+    <div style="margin-top:8px;font-weight:800">✅ Recompensa - R$ 3,00 - Convite</div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+function copiar(){
+  navigator.clipboard.writeText('41998936718');
+  alert('✅ Chave PIX 41998936718 copiada! Cole no seu banco.');
+}
+function gerarQr(){
+  document.getElementById('qrcode').innerHTML='';
+  new QRCode(document.getElementById('qrcode'), {
+    text: "00020126580014BR.GOV.BCB.PIX0136+55419989367180214Banco Gratidao5204000053039865802BR5920JOSE MARCOS6009CURITIBA62070503***6304",
+    width: 180, height: 180
+  });
+}
+</script>
+</body>
+</html>
