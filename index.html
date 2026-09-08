@@ -1,247 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Banco Gratidão - Doutorado</title>
-<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Inter,sans-serif}
-body{background:#000;color:#fff;max-width:450px;margin:0 auto}
-.card-top{background:linear-gradient(135deg,#8A05BE,#4A0072);border-radius:0 0 28px 28px;padding:30px 25px 45px 25px}
-.card-info{background:#1c1c1e;border-radius:20px;padding:20px;margin:-25px 15px 20px 15px;border:1px solid #2a2a2a;box-shadow:0 10px 30px rgba(0,0,0,.5)}
-.row{display:flex;justify-content:space-around;margin:15px 0 20px 0}
-.circle{width:70px;height:70px;background:#2c2c2e;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;border:1px solid #333}
-.item{padding:16px 0;border-bottom:1px solid #2a2a2a;display:flex;justify-content:space-between;align-items:center}
-.pixkey{background:#2a2a2a;padding:14px;border-radius:12px;text-align:center;color:#00ff88;font-weight:800;letter-spacing:1px;margin:12px 0;border:1px solid #00d26a}
-.qrbox{background:#fff;padding:18px;border-radius:16px;text-align:center;margin-top:15px}
-.btn{width:100%;padding:16px;border-radius:12px;border:none;font-weight:800;font-size:15px;margin-top:10px;cursor:pointer}
-.btn-y{background:#FFD600;color:#000}
-.btn-w{background:#fff;color:#000}
-.tag{background:#D4AF37;color:#000;font-size:10px;padding:4px 8px;border-radius:20px;font-weight:900;margin-left:8px}
-</style>
-</head>
-<body>
-
-<div class="card-top">
-<p style="font-size:14px">‹ Voltar</p>
-<h2 style="text-align:center;margin-top:10px;font-weight:700">Cartões virtuais</h2>
-<div style="margin-top:30px;display:flex;align-items:center">
-<div><h3>José Marcos <span class="tag">DOUTORADO</span></h3><p style="opacity:.8;margin-top:4px">Roxinho Virtual •••• 7447 • Gold</p></div>
-</div>
-</div>
-
-<div class="card-info">
-<div class="row">
-<div style="text-align:center" onclick="alert('Cartão bloqueado/des
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BANCO GRATIDÃO - Cartão Doutorado</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#fff;font-family:system-ui,sans-serif;min-height:100vh}
-.header{background:linear-gradient(180deg,#820ad1,#4a0080);padding:28px 20px 60px 20px;border-radius:0 0 30px 30px}
-.header h1{text-align:center;font-size:28px;font-weight:800}
-.card-wrap{margin:-40px 16px 0 16px}
-.card{background:linear-gradient(135deg,#820ad1,#4a0080);border-radius:20px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
-.card-top{display:flex;justify-content:space-between;align-items:center}
-.name{font-size:22px;font-weight:800}
-.tag{background:#ffcc00;color:#000;font-size:11px;padding:4px 10px;border-radius:20px;font-weight:800;margin-left:8px}
-.sub{margin-top:4px;opacity:.9}
-.content{max-width:500px;margin:20px auto;padding:0 16px}
-.box{background:#171717;border:1px solid #2a2a2a;border-radius:20px;padding:18px;margin-bottom:14px}
-.btn{width:100%;padding:16px;border-radius:14px;border:0;font-weight:800;font-size:15px;cursor:pointer;margin-top:10px}
-.btn-pix{background:#fff;color:#000}
-.btn-mp{background:#009ee3;color:#fff}
-.saldo{font-size:42px;font-weight:900;margin:8px 0}
-.info{color:#aaa;font-size:13px;word-break:break-all}
-.pix-key{background:#000;border:1px dashed #444;padding:12px;border-radius:10px;margin:10px 0;text-align:center;font-weight:bold;letter-spacing:1px;color:#00d26a}
-</style>
-</head>
-<body>
-<div class="header">
-  <h1>Cartões virtuais</h1>
-</div>
-
-<div class="card-wrap">
-  <div class="card">
-    <div class="card-top">
-      <div style="display:flex;align-items:center"><div class="name">José Marcos</div><div class="tag">DOUTORADO</div></div>
-    </div>
-    <div class="sub">Roxinho Virtual •••• 7447 • Gold</div>
-    <div style="margin-top:16px;display:flex;gap:8px">
-      <div style="width:40px;height:30px;background:#ffcc00;border-radius:4px"></div>
-      <div style="width:40px;height:30px;background:linear-gradient(90deg,#ff5f00,#eb001b,#f79e1b);border-radius:50%;opacity:.9"></div>
-    </div>
-  </div>
-</div>
-
-<div class="content">
-  <div class="box">
-    <div style="color:#888;font-size:12px">SALDO DISPONÍVEL - COFRE MERCADO PAGO</div>
-    <div class="saldo">R$ 1.247,83</div>
-    <div class="info">Ag: 0001 • Conta: 887412-3 • Titular: Banco Gratidão</div>
-    <button class="btn btn-pix" onclick="window.location.href='https://link.mercadopago.com.br/bancograti'">Ver Extrato no Mercado Pago</button>
-  </div>
-
-  <div class="box">
-    <div style="font-weight:800;margin-bottom:6px">Pix Mercado Pago - Cofre Seguro</div>
-    <div class="info">CHAVE PIX: (41) 99893-6718</div>
-    <div class="pix-key" id="chave">41998936718</div>
-    <button class="btn btn-pix" onclick="copiar()">Copiar Chave Pix</button>
-    <button class="btn btn-mp" onclick="gerarQr()">Gerar QR Code Pix</button>
-    <div id="qrcode" style="text-align:center;margin-top:14px"></div>
-    <div class="info" style="margin-top:10px;text-align:center">Banco Gratidão Oficial • Recebimento via Mercado Pago</div>
-  </div>
-
-  <div class="box">
-    <div style="font-weight:800">✅ Pix recebido - R$ 250,00 - via Mercado Pago</div>
-    <div style="margin-top:8px;font-weight:800">✅ Recompensa - R$ 3,00 - Convite</div>
-  </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-function copiar(){
-  navigator.clipboard.writeText('41998936718');
-  alert('✅ Chave PIX 41998936718 copiada! Cole no seu banco.');
+// BANCO GRATIDÃO v2.0 - RECEPTOR DO BOTÃO FÍSICO DO BARCO
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Página1");
+  var lr = sheet.getLastRow() + 1;
+  var dados = JSON.parse(e.postData.contents);
+  
+  // IA 2.0 classifica sozinha
+  var desc = dados.descricao || "Combustível - D";
+  var cat = "Outros";
+  if (desc.toLowerCase().includes("comb") || desc.toLowerCase().includes("diesel")) cat = "Combustível";
+  if (desc.toLowerCase().includes("manut")) cat = "Manutenção";
+  
+  sheet.getRange(lr, 1).setValue(new Date());
+  sheet.getRange(lr, 2).setValue(dados.tipo || "SAÍDA");
+  sheet.getRange(lr, 3).setValue(desc);
+  sheet.getRange(lr, 4).setValue(cat);
+  sheet.getRange(lr, 5).setValue(dados.valor || 180);
+  sheet.getRange(lr, 6).setValue("Botão Barco Flic");
+  sheet.getRange(lr, 7).setFormula("=G"+(lr-1)+"+IF(B"+lr+"=\"ENTRADA\",E"+lr+",-E"+lr+")");
+  
+  return ContentService.createTextOutput("OK - Gasto lançado: R$ " + dados.valor);
 }
-function gerarQr(){
-  document.getElementById('qrcode').innerHTML='';
-  new QRCode(document.getElementById('qrcode'), {
-    text: "00020126580014BR.GOV.BCB.PIX0136+55419989367180214Banco Gratidao5204000053039865802BR5920JOSE MARCOS6009CURITIBA62070503***6304",
-    width: 180, height: 180
-  });
+
+// GERA O LINK DO SEU BANCO
+function getLinkBanco() {
+  var url = ScriptApp.getService().getUrl();
+  Logger.log(url);
+  Browser.msgBox("Seu link é: " + url + " - Copia esse link pro Flic!");
 }
-</script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banco Gratidão Gold</title>
-<style>
-body{background:#0a0a0a;color:#fff;font-family:system-ui;margin:0}
-.header{background:#820ad1;padding:30px 20px 70px;border-radius:0 0 30px 30px;text-align:center}
-.card-wrap{margin:-45px 16px 0}
-.card{background:linear-gradient(135deg,#FFD700 0%,#D4AF37 25%,#FFC300 50%,#B8860B 100%);border-radius:22px;padding:22px;color:#000;box-shadow:0 15px 40px rgba(255,215,0,.3);border:2px solid #FFD700}
-.box{background:#171717;border:1px solid #2a2a2a;border-radius:20px;padding:18px;margin:14px 16px}
-.btn{width:100%;padding:16px;border-radius:14px;border:0;font-weight:800;margin-top:10px;background:#fff;color:#000}
-</style>
-</head>
-<body>
-<div class="header"><h1 style="color:white;font-size:26px">Cartões virtuais</h1></div>
-<div class="card-wrap">
-  <div class="card">
-    <div style="font-size:24px;font-weight:900;color:#000;letter-spacing:1px">Banco Gratidão</div>
-    <div style="margin-top:8px;font-size:14px;color:#222;font-weight:700">Roxinho Virtual •••• 7447 • Gold</div>
-    <div style="display:flex;justify-content:space-between;align-items:end;margin-top:22px">
-      <div style="width:44px;height:34px;background:linear-gradient(135deg,#ffe27a,#c9a227);border-radius:6px;border:1px solid #8a6d00"></div>
-      <div style="width:46px;height:46px;background:radial-gradient(circle at 30% 30%, #ff5f00, #eb001b 40%, #f79e1b);border-radius:50%"></div>
-    </div>
-  </div>
-</div>
-<div class="box">
-  <div style="color:#888;font-size:11px">SALDO DISPONÍVEL - COFRE MERCADO PAGO</div>
-  <div style="font-size:42px;font-weight:900;margin:6px 0">R$ 1.247,83</div>
-  <div style="color:#9a9a9a;font-size:13px">Pix: 41998936718 • Mercado Pago</div>
-  <button class="btn" onclick="navigator.clipboard.writeText('41998936718');alert('Chave PIX copiada!')">Copiar Pix 41998936718</button>
-</div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banco Gratidão Gold</title>
-<style>
-body{background:#0a0a0a;color:#fff;font-family:system-ui;margin:0}
-.header{background:#820ad1;padding:30px 20px 70px;border-radius:0 0 30px 30px;text-align:center}
-.card-wrap{margin:-45px 16px 0}
-.card{background:linear-gradient(135deg,#FFD700 0%,#D4AF37 25%,#FFC300 50%,#B8860B 100%);border-radius:22px;padding:22px;color:#000;box-shadow:0 15px 40px rgba(255,215,0,.3);border:2px solid #FFD700}
-.box{background:#171717;border:1px solid #2a2a2a;border-radius:20px;padding:18px;margin:14px 16px}
-.btn{width:100%;padding:16px;border-radius:14px;border:0;font-weight:800;margin-top:10px;background:#fff;color:#000}
-</style>
-</head>
-<body>
-<div class="header"><h1 style="color:white;font-size:26px">Cartões virtuais</h1></div>
-<div class="card-wrap">
-  <div class="card">
-    <div style="font-size:24px;font-weight:900;color:#000;letter-spacing:1px">Banco Gratidão</div>
-    <div style="margin-top:8px;font-size:14px;color:#222;font-weight:700">Roxinho Virtual •••• 7447 • Gold</div>
-    <div style="display:flex;justify-content:space-between;align-items:end;margin-top:22px">
-      <div style="width:44px;height:34px;background:linear-gradient(135deg,#ffe27a,#c9a227);border-radius:6px;border:1px solid #8a6d00"></div>
-      <div style="width:46px;height:46px;background:radial-gradient(circle at 30% 30%, #ff5f00, #eb001b 40%, #f79e1b);border-radius:50%"></div>
-    </div>
-  </div>
-</div>
-<div class="box">
-  <div style="color:#888;font-size:11px">SALDO DISPONÍVEL - COFRE MERCADO PAGO</div>
-  <div style="font-size:42px;font-weight:900;margin:6px 0">R$ 1.247,83</div>
-  <div style="color:#9a9a9a;font-size:13px">Pix: 41998936718 • Mercado Pago</div>
-  <button class="btn" onclick="navigator.clipboard.writeText('41998936718');alert('Chave PIX copiada!')">Copiar Pix 41998936718</button>
-</div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banco Gratidão Gold</title>
-<style>
-body{margin:0;background:#050505;color:#fff;font-family:system-ui}
-.header{background:#820ad1;padding:28px 20px 65px;border-radius:0 0 28px 28px;text-align:center;font-weight:800;font-size:24px}
-.wrap{margin:-45px 14px 0}
-.card-gold{
-  background:url('cartao-gold.png') no-repeat center/cover;
-  background-color:#D4AF37;
-  border-radius:20px;min-height:210px;position:relative;
-  box-shadow:0 15px 40px rgba(212,175,55,.4);border:2px solid #FFD700;
-  overflow:hidden;
-}
-.fallback{
-  background:linear-gradient(135deg,#FFD700,#D4AF37,#B8860B);
-  border-radius:20px;padding:18px;color:#000;min-height:210px
-}
-.emblem{
-  width:72px;height:72px;border:2px solid #FFD700;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:42px;font-weight:900;color:#FFD700;
-  background:rgba(0,0,0,.15)
-}
-.box{background:#171717;border:1px solid #2a2a2a;border-radius:18px;padding:16px;margin:14px}
-</style>
-</head>
-<body>
-<div class="header">Cartões virtuais</div>
-<div class="wrap">
-  <div class="card-gold">
-    <!-- Se a imagem não carregar, mostra o fallback dourado com G -->
-    <div style="padding:18px;display:flex;flex-direction:column;height:100%;min-height:210px;box-sizing:border-box">
-      <div style="display:flex;align-items:center;gap:12px">
-        <div class="emblem">G</div>
-        <div style="font-size:18px;font-weight:900;line-height:1;color:#fff;text-shadow:0 1px 3px #000">
-          Banco<br><span style="color:#FFD700">Gratidão</span>
-        </div>
-      </div>
-      <div style="margin-top:auto">
-        <div style="width:46px;height:34px;background:linear-gradient(135deg,#ffe27a,#c9a227);border-radius:5px;border:1px solid #000"></div>
-        <div style="margin-top:12px;font-size:18px;font-weight:800;color:#fff;text-shadow:0 1px 2px #000">Bem-vindo</div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="box">
-  <div style="color:#888;font-size:11px">SALDO DISPONÍVEL - COFRE MERCADO PAGO</div>
-  <div style="font-size:38px;font-weight:900">R$ 1.247,83</div>
-  <div style="color:#777;font-size:12px">Pix: 41998936718</div>
-</div>
-</body>
-</html>
