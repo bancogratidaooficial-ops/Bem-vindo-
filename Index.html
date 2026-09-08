@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+8<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,5 +88,64 @@ function iniciar(){setInterval(()=>{let a=new Date().toTimeString().slice(0,5);l
 function check(p,h){let hoje=new Date().toDateString();let k='last_'+h;if(localStorage.getItem(k)!==hoje){enviar(p);localStorage.setItem(k,hoje)}}
 window.onload=()=>{if(localStorage.getItem('banco_h1'))iniciar();renderG();atualizarMoedas();if(localStorage.getItem('banco_nome'))document.getElementById('nomeShow').innerText=localStorage.getItem('banco_nome');document.getElementById('dataHoje').innerText=new Date().toLocaleDateString('pt-BR');let hojeSort=localStorage.getItem('sorteio_'+new Date().toDateString());if(hojeSort)document.getElementById('sorteadoNome').innerHTML='🎉 '+hojeSort+' 🎉 (IA sorteou hoje)';}
 </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banco Gratidão Gold</title>
+<style>
+body{margin:0;background:#09090a;color:#fff;font-family:system-ui}
+.header{background:#820ad1;padding:30px 20px 70px;border-radius:0 0 28px 28px;text-align:center;font-size:26px;font-weight:800;color:white}
+.wrap{margin:-50px 16px 0}
+.card{
+  background:linear-gradient(135deg,#FFD700 0%,#E6C200 15%,#FFC300 35%,#D4AF37 70%,#B8860B 100%);
+  border-radius:22px;padding:20px;position:relative;overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.6);border:2px solid #FFD700;color:#000
+}
+.emblem{
+  width:88px;height:88px;background:linear-gradient(135deg,#4a0080,#820ad1);
+  border-radius:18px;display:flex;align-items:center;justify-content:center;
+  font-size:52px;font-weight:900;color:#FFD700;
+  border:3px solid #FFD700;box-shadow:0 4px 15px rgba(0,0,0,.3);
+}
+.g-watermark{
+  position:absolute;right:-10px;top:20px;font-size:160px;font-weight:900;
+  color:rgba(0,0,0,.07);line-height:1;pointer-events:none
+}
+.box{background:#151515;border:1px solid #2a2a2a;border-radius:18px;padding:18px;margin:14px 16px}
+.btn{width:100%;padding:15px;border-radius:12px;border:0;font-weight:800;background:#fff;color:#000}
+</style>
+</head>
+<body>
+<div class="header">Cartões virtuais</div>
+
+<div class="wrap">
+  <div class="card">
+    <div class="g-watermark">G</div>
+    <div style="display:flex;gap:14px;align-items:center;position:relative;z-index:2">
+      <div class="emblem">G</div>
+      <div>
+        <div style="font-size:20px;font-weight:900;line-height:1.1;color:#1a0033">Banco<br>Gratidão</div>
+        <div style="margin-top:6px;font-size:13px;font-weight:700;color:#333">Gratidão • Premium Gold</div>
+      </div>
+    </div>
+    <div style="margin-top:18px;position:relative;z-index:2">
+      <div style="font-size:14px;font-weight:700;color:#222">Roxinho Virtual •••• 7447 • Gold</div>
+      <div style="display:flex;justify-content:space-between;align-items:end;margin-top:16px">
+        <div style="width:44px;height:32px;background:linear-gradient(135deg,#ffe27a,#c9a227);border-radius:5px;border:1px solid #8a6d00"></div>
+        <div style="width:44px;height:44px;background:radial-gradient(circle at 30% 30%, #ff5f00,#eb001b 40%,#f79e1b);border-radius:50%"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="box">
+  <div style="color:#888;font-size:11px">SALDO DISPONÍVEL - COFRE MERCADO PAGO</div>
+  <div style="font-size:40px;font-weight:900;margin:6px 0">R$ 1.247,83</div>
+  <div style="color:#888;font-size:13px">Ag: 0001 • Conta: 887412-3 • Pix: 41998936718</div>
+  <button class="btn" style="margin-top:12px" onclick="navigator.clipboard.writeText('41998936718');alert('PIX copiado!')">Copiar Pix</button>
+</div>
 </body>
 </html>
