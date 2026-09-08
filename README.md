@@ -42,7 +42,7 @@ body{margin:0;background:#050505;color:#fff;font-family:system-ui}
       </div>
       <div style="margin-top:auto">
         <div style="width:46px;height:34px;background:linear-gradient(135deg,#ffe27a,#c9a227);border-radius:5px;border:1px solid #000"></div>
-        <div style="margin-top:12px;font-size:18px;font-weight:800;color:#fff;text-shadow:0 1px 2px #000">José Marcos</div>
+        <div style="margin-top:12px;font-size:18px;font-weight:800;color:#fff;text-shadow:0 1px 2px #000">Bem-vindo</div>
       </div>
     </div>
   </div>
