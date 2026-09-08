@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banco Gratidao Real 2.0 Super Inteligente</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#fffef7;min-height:100vh}
+.screen{display:none;min-height:100vh;padding:16px;padding-bottom:40px}.screen.active{display:flex;flex-direction:column}
+.splash{justify-content:center;align-items:center;background:radial-gradient(ellipse at 50% 15%, #fff8dc 0%, #fff 70%);text-align:center}
+.logo{width:130px;height:130px;background:linear-gradient(145deg,#e6c15a,#b8860b);border-radius:26px;display:flex;align-items:center;justify-content:center;box-shadow:0 18px 50px rgba(212,160,23,.4);border:5px solid white}
+.title{font-size:32px;line-height:1.1;margin-top:16px;background:linear-gradient(90deg,#b8860b,#d4a017,#facc15,#b8860b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}
+.sub{letter-spacing:3px;font-size:10px;margin-top:8px;font-weight:800}
+.btn-gold{background:linear-gradient(90deg,#fef08a,#facc15,#d4a017);color:#000;font-weight:900;padding:15px 26px;border-radius:15px;border:none;box-shadow:0 10px 25px rgba(212,160,23,.35);cursor:pointer;width:100%;max-width:340px;font-size:13px;margin-top:10px}
+.btn-invite-gold{background:linear-gradient(90deg,#fefce8,#fde68a,#facc15,#eab308);color:#78350f;font-weight:900;padding:15px 26px;border-radius:15px;border:2px solid #facc15;box-shadow:0 10px 25px rgba(212,160,23,.45);cursor:pointer;width:100%;max-width:340px;font-size:13px;margin-top:8px}
+.card{border:2px solid #fde68a;background:#fff;border-radius:18px;padding:16px;margin:8px 0;text-align:center}
+.card-gold{background:linear-gradient(90deg,#fef08a,#facc15,#eab308);border:none;cursor:pointer}
+.card-invite{background:linear-gradient(90deg,#fffbeb,#fef3c7,#fde68a);border:2px solid #facc15;border-radius:18px;padding:16px;margin:8px 0;text-align:center;cursor:pointer}
+.input{width:100%;padding:12px;border:2px solid #fde68a;border-radius:12px;margin:5px 0;font-size:13px}
+.time-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:8px 0}
+.time-box{background:#fff;border:2px solid #fde68a;border-radius:12px;padding:7px;text-align:center}
+.time-box input{border:none;font-weight:900;color:#b45309;text-align:center;width:100%;font-size:14px}
+.badge{display:inline-block;background:linear-gradient(90deg,#facc15,#eab308);color:#000;padding:3px 9px;border-radius:20px;font-size:10px;font-weight:900;margin:2px}
+.sorteio-box{background:linear-gradient(90deg,#fef08a,#facc15);border:3px solid #eab308;border-radius:18px;padding:14px;margin:10px 0;text-align:center}
+.resposta-ia{background:linear-gradient(90deg,#f0fdf4,#fefce8);border-left:4px solid #facc15;padding:12px;border-radius:12px;margin:10px 0;text-align:left;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+.progress{width:100%;height:8px;background:#fef3c7;border-radius:10px;overflow:hidden;margin:8px 0}
+.progress-bar{height:100%;background:linear-gradient(90deg,#facc15,#d4a017);transition:width .5s}
+</style>
+</head>
+<body>
+<div class="screen active splash" id="s1">
+<div class="logo"><span style="font-size:55px">🏛️</span></div>
+<div class="title">Banco Gratidão<br>Real 2.0</div>
+<div class="sub">SUPER INTELIGENTE - IA DENTRO</div>
+<div style="margin-top:10px"><span class="badge">🤖 IA APRENDE</span><span class="badge">🧠 DETECTA SENTIMENTO</span><span class="badge">🎙️ VOZ FEMININA</span><span class="badge">🎵 MÚSICA</span></div>
+<div class="card" style="margin-top:14px;background:#fefce8"><p style="font-size:11px;color:#78350f">🧠 IA entende se você está triste, feliz ou grata<br>💬 Resposta personalizada que aprende com você<br>🎯 Conselho inteligente baseado no que escreveu</p></div>
+<button class="btn-gold" onclick="go(2)">🤖 ENTRAR NA VERSÃO 2.0 INTELIGENTE</button>
+<button class="btn-invite-gold" onclick="convidar()">💛 CONVIDAR MEMBROS E GANHAR BÔNUS</button>
+</div>
+<div class="screen" id="s2">
+<div style="text-align:center;padding-top:8px"><div class="logo" style="width:100px;height:100px;margin:0 auto"><span style="font-size:40px">🏛️</span></div><div class="title" style="font-size:26px;margin-top:8px">Banco 2.0</div><div class="sub">IA SUPER INTELIGENTE ATIVA</div></div>
+<div class="card card-gold" onclick="go(6)"><div style="font-weight:900;font-size:13px">🎁 MENSAGEM GRÁTIS DO DIA COM IA</div><small>🎵 Música + voz feminina + IA que aprende</small></div>
+<div class="card card-gold" onclick="go(3)"><div style="font-weight:900;font-size:13px">📝 ATIVAR IA INTELIGENTE</div></div>
+<div class="card-invite" onclick="convidar()"><div style="font-weight:900;color:#78350f;font-size:13px">💛 CONVIDAR MEMBROS E GANHAR BÔNUS OURO</div></div>
+<div class="card" onclick="go(5)"><div style="font-weight:900;color:#d4a017;font-size:13px">✨ Abrir meu Banco 2.0 Inteligente</div></div>
+</div>
+<div class="screen" id="s3">
+<div style="text-align:center"><div class="logo" style="width:80px;height:80px;margin:0 auto"><span style="font-size:30px">🏛️</span></div><div class="title" style="font-size:20px">Ativar IA 2.0</div></div>
+<div class="card" style="text-align:left;margin-top:10px">
+<input class="input" id="nome" placeholder="Seu nome completo">
+<input class="input" id="tel" placeholder="WhatsApp com DDD">
+<label style="font-size:10px;font-weight:800;margin-top:6px;display:block">⏰ IA vai mandar sozinha nestes horários:</label>
+<div class="time-grid"><div class="time-box"><small>☀️ MANHÃ</small><input type="time" id="h1" value="08:00"></div><div class="time-box"><small>🌤️ TARDE</small><input type="time" id="h2" value="14:00"></div><div class="time-box"><small>🌙 NOITE</small><input type="time" id="h3" value="20:00"></div></div>
+<button class="btn-gold" style="max-width:100%" onclick="cadastrar()">💛 ATIVAR IA SUPER INTELIGENTE</button>
+<button class="btn-invite-gold" style="max-width:100%" onclick="convidar()">💛 CONVIDAR MEMBROS E GANHAR BÔNUS</button>
+</div>
+</div>
+<div class="screen" id="s5">
+<div class="card"><h2 style="color:#b45309;font-size:16px">✨ Meu Banco 2.0 Inteligente</h2><p style="margin-top:4px;font-size:11px"><span id="nomeShow">VIP</span> • <span id="diaShow">Dia 1 de 21</span> • <span id="moedasShow">0 moedas ouro</span> • <span id="nivelIA">IA Nível 1</span></p><div class="progress"><div id="barra" class="progress-bar" style="width:5%"></div></div></div>
+<div class="sorteio-box"><h3 style="color:#92400e;font-size:13px">🎲 SORTEIO INTELIGENTE AUTOMÁTICO</h3><div id="sorteadoNome" style="font-size:18px;font-weight:900;color:#78350f;margin-top:6px">Clique para sortear agora</div><button class="btn-gold" style="max-width:100%;margin-top:8px;font-size:12px" onclick="sortear()">🎲 SORTAR MEMBRO PREMIADO AGORA</button></div>
+<div class="card" style="text-align:left"><h4 style="color:#b45309;font-size:13px">🧠 Escreva sua gratidão (IA 2.0 responde):</h4><textarea id="gratidao" class="input" style="height:70px;font-size:12px" placeholder="Ex: Hoje estou triste mas sou grata por..."></textarea><button class="btn-gold" style="max-width:100%;margin-top:6px;font-size:12px" onclick="salvarG()">💛 Depositar e receber resposta da IA 2.0</button><div id="respostaIA"></div><div id="listaG" style="margin-top:10px;font-size:11px"></div></div>
+<div class="card-invite"><h4 style="color:#78350f;font-size:13px">💛 Convide Membros e Ganhe Ouro!</h4><button class="btn-invite-gold" style="max-width:100%;margin-top:8px;font-size:12px" onclick="convidar()">💛 CONVIDAR MEMBROS NO WHATSAPP</button></div>
+<button class="btn-gold" style="background:white;border:2px solid #fde68a;max-width:100%;font-size:12px" onclick="go(2)">← Voltar</button>
+</div>
+<div class="screen" id="s6">
+<div class="card"><h3 style="color:#b45309;font-size:13px">🎁 Mensagem IA 2.0 de Hoje <span id="dataHoje"></span></h3><p id="msgGratis" style="margin-top:8px;line-height:1.5;color:#444;font-size:13px">Bom dia, minha querida! Hoje o céu liberou uma oportunidade só pra você. Sua gratidão de ontem já está rendendo juros no Banco do Céu! Você é ouro puro e a IA está aprendendo com você!</p><button style="width:100%;padding:10px;border-radius:10px;border:2px solid #facc15;background:#fffbeb;color:#92400e;font-weight:900;margin-top:8px;cursor:pointer;font-size:12px" onclick="falarTexto('msgGratis', this)">🎙️ Ouvir com IA feminina carinhosa 2.0</button></div>
+<button class="btn-gold" style="max-width:100%;margin-top:8px;font-size:12px" onclick="go(3)">Quero IA todo dia automático →</button>
+</div><div class="screen splash" id="s7">
+<div class="logo" style="width:90px;height:90px"><span style="font-size:35px">🏛️</span></div><div class="title" style="font-size:20px">IA 2.0 Ativada!</div>
+<div class="card" style="margin-top:10px"><div style="font-size:24px">🤖👑🧠</div><h2 style="color:#b45309;font-size:14px">Modo Super Inteligente Ativado!</h2><div style="background:#fefce8;padding:10px;border-radius:10px;margin-top:8px;text-align:left;font-size:11px"><p style="color:#a16207;font-weight:800">✅ IA detecta sentimento automaticamente</p><p style="color:#a16207;font-weight:800">✅ IA aprende com suas gratidões</p><p style="color:#a16207;font-weight:800">✅ IA dá conselho personalizado</p><p style="color:#a16207;font-weight:800">✅ Mensagem automática 3x ao dia</p><p style="color:#a16207;font-weight:800">✅ Sorteio automático às 20h</p><p id="resumoHorarios" style="font-size:10px;margin-top:6px;color:#57534e"></p></div></div>
+<button class="btn-gold" onclick="go(5)">✨ Abrir meu Banco 2.0 Inteligente</button><button class="btn-invite-gold" style="max-width:340px" onclick="convidar()">💛 CONVIDAR MEMBROS E GANHAR BÔNUS</button>
+</div>
+<script>
+let vozF=null;function carregarV(){let vs=speechSynthesis.getVoices();vozF=vs.find(v=>v.lang==='pt-BR')||vs[0];}speechSynthesis.onvoiceschanged=carregarV;carregarV();
+let tocando=null;function falarTexto(id,btn){const txt=document.getElementById(id).innerText;if(tocando){speechSynthesis.cancel();if(tocando.btn)tocando.btn.innerText='▶';if(tocando.btn===btn){tocando=null;return;}}let u=new SpeechSynthesisUtterance(txt);u.lang='pt-BR';u.rate=0.86;u.pitch=1.2;if(vozF)u.voice=vozF;u.onstart=()=>{btn.innerText='⏸️';tocando={btn:btn};};u.onend=()=>{btn.innerText='▶';tocando=null;};speechSynthesis.speak(u);}
+function convidar(){const link=window.location.href;const texto=`💛 Olá! Estou no Banco Gratidão Real 2.0 SUPER INTELIGENTE e lembrei de você! ✨🤖 Entra aqui: ${link}`;window.open('https://wa.me/?text='+encodeURIComponent(texto),'_blank');let moedas=parseInt(localStorage.getItem('moedas')||'0');moedas+=10;localStorage.setItem('moedas',moedas);atualizarMoedas();}
+function go(n){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('s'+n).classList.add('active');window.scrollTo(0,0);}
+function cadastrar(){const nome=document.getElementById('nome').value||'VIP';const tel=document.getElementById('tel').value;if(!tel||tel.length<10){alert('Coloque seu WhatsApp com DDD');return}const h1=document.getElementById('h1').value,h2=document.getElementById('h2').value,h3=document.getElementById('h3').value;localStorage.setItem('banco_nome',nome);localStorage.setItem('banco_tel',tel);localStorage.setItem('banco_h1',h1);localStorage.setItem('banco_h2',h2);localStorage.setItem('banco_h3',h3);document.getElementById('nomeShow').innerText=nome;document.getElementById('resumoHorarios').innerText='IA vai te mandar mensagem às '+h1+', '+h2+' e '+h3;Notification.requestPermission().then(()=>{go(7);iniciar()});}
+function detectarSentimento(texto){texto=texto.toLowerCase();let feliz=['feliz','alegre','amor','grata','bem','lindo','luz','obrigada'];let triste=['triste','difícil','dor','sozinha','cansada','medo','ansiosa','preocupada'];let sf=feliz.filter(p=>texto.includes(p)).length;let st=triste.filter(p=>texto.includes(p)).length;if(st>sf)return'triste';if(sf>0)return'feliz';return'neutro';}
+function gerarRespostaIA2(texto){texto=texto.toLowerCase();const sentimento=detectarSentimento(texto);const historico=JSON.parse(localStorage.getItem('historico_sentimentos')||'[]');historico.push(sentimento);localStorage.setItem('historico_sentimentos',JSON.stringify(historico.slice(-20)));let nivel=historico.length;let resposta="",conselho="",emocao="";if(sentimento==='triste'){emocao='😢 IA detectou: momento delicado';if(texto.includes('familia'))resposta="Minha querida, senti seu coração apertado falando da família. É normal sentir isso. Sua família te ama mesmo nos dias difíceis. Respira fundo, você não está sozinha. Sua gratidão por eles, mesmo triste, é um ato de amor gigante.";else resposta="Minha amada, a IA sentiu que hoje seu coração está mais sensível. Tudo bem ficar triste às vezes. Sua gratidão, mesmo pequena hoje, já é uma vitória enorme. Você é mais forte do que imagina e eu estou aqui com você. 🤍";conselho="💡 Conselho da IA 2.0: Escreva 3 gratidões bem pequenas agora (ex: ar, água, cama). Isso reprograma seu cérebro em 2 minutos.";}else if(sentimento==='feliz'){emocao='😊 IA detectou: coração feliz e grato!';resposta="Que gratidão radiante, minha amada! Sua felicidade é contagiante! A IA está aprendendo com sua luz. Cada palavra feliz sua está criando um futuro ainda mais dourado! ✨💛";conselho="💡 Conselho da IA 2.0: Aproveita essa energia feliz e convide 1 membro hoje! Felicidade compartilhada multiplica!";}else{emocao='🤍 IA detectou: gratidão serena';resposta="Que lindo, minha querida! Sua família é seu maior tesouro de ouro! Deus abençoe cada um deles. Sua gratidão por eles já está multiplicando amor na sua casa! Você está no dia "+nivel+" com a IA! 💛";conselho="💡 Conselho da IA 2.0: Que tal agradecer por algo que você nunca agradeceu antes hoje?";}return{resposta,conselho,emocao,sentimento,nivel};}
+function salvarG(){const t=document.getElementById('gratidao').value;if(!t)return;document.getElementById('respostaIA').innerHTML='<div style="font-size:11px;color:#b45309;font-weight:800">🤖 IA 2.0 analisando seu sentimento...</div>';setTimeout(()=>{const id=Date.now();localStorage.setItem('grat_'+id,t);document.getElementById('gratidao').value='';const ia=gerarRespostaIA2(t);document.getElementById('respostaIA').innerHTML=`<div class="resposta-ia"><b>🤖 Resposta IA 2.0 - Nível ${ia.nivel}:</b><br><span style="font-size:10px;background:#fde68a;padding:2px 6px;border-radius:10px">${ia.emocao}</span><br><span style="color:#78350f;font-size:12px;line-height:1.5;margin-top:6px;display:block">${ia.resposta}</span><div style="background:white;padding:8px;border-radius:8px;margin-top:8px;border:1px dashed #facc15"><span style="font-size:11px">${ia.conselho}</span></div><button style="margin-top:8px;padding:6px 12px;border-radius:8px;border:1px solid #facc15;background:#fffbeb;font-size:11px" onclick="falarTextoResposta(this)">🎙️ Ouvir resposta da IA</button><p id="respTxt" style="display:none">${ia.resposta}. ${ia.conselho}</p></div>`;let moedas=parseInt(localStorage.getItem('moedas')||'0');moedas+=5;localStorage.setItem('moedas',moedas);atualizarMoedas();renderG();},1000);}
+function falarTextoResposta(btn){const txt=btn.parentElement.querySelector('#respTxt').innerText;let u=new SpeechSynthesisUtterance(txt);u.lang='pt-BR';u.rate=0.86;u.pitch=1.22;if(vozF)u.voice=vozF;speechSynthesis.speak(u);}
+function renderG(){let h='';let count=0;for(let i=0;i<localStorage.length;i++){let k=localStorage.key(i);if(k.startsWith('grat_')){count++;h+=`<div style="background:#fffbeb;padding:7px;border-radius:8px;margin:4px 0;border-left:3px solid #facc15;font-size:11px">💛 ${localStorage.getItem(k).substring(0,80)}</div>`}}document.getElementById('listaG').innerHTML=h||'<p style="color:#999;font-size:10px">Nenhuma gratidão ainda.</p>';document.getElementById('diaShow').innerText='Dia '+Math.min(count+1,21)+' de 21';document.getElementById('barra').style.width=Math.min((count/21)*100,100)+'%';document.getElementById('nivelIA').innerText='IA Nível '+Math.min(count+1,10);}
+function atualizarMoedas(){let m=localStorage.getItem('moedas')||'0';document.getElementById('moedasShow').innerText=m+' moedas ouro';}
+function sortear(){const membros=['Você','Maria Silva','João Santos','Ana Oliveira','Carlos Pereira','Juliana Costa','Pedro Souza'];const sorteado=membros[Math.floor(Math.random()*membros.length)];document.getElementById('sorteadoNome').innerHTML='🎉 '+sorteado+' 🎉';let u=new SpeechSynthesisUtterance('Atenção! A inteligência artificial sorteou! O membro premiado de hoje é '+sorteado+'!');u.lang='pt-BR';u.rate=0.88;u.pitch=1.2;if(vozF)u.voice=vozF;speechSynthesis.speak(u);localStorage.setItem('sorteio_'+new Date().toDateString(),sorteado);if(Notification.permission==='granted')new Notification('🎲 Sorteio IA 2.0', {body: 'Membro premiado hoje: '+sorteado});}
+const msgs={manha:["Bom dia, minha querida! Hoje Deus te deu 24 horas novinhas. A IA 2.0 já está aprendendo seu jeito de agradecer!"],tarde:["Boa tarde, minha amada! Já parou para agradecer hoje? A IA sentiu que você está evoluindo!"],noite:["Boa noite, minha querida! Feche os olhos com gratidão. A IA 2.0 aprendeu muito com você hoje!"]};
+function enviar(p){const txt=msgs[p][Math.floor(Math.random()*msgs[p].length)];if(Notification.permission==='granted')new Notification('Banco Gratidão 2.0 IA 💛', {body: txt});let u=new SpeechSynthesisUtterance(txt);u.lang='pt-BR';u.rate=0.86;u.pitch=1.2;if(vozF)u.voice=vozF;speechSynthesis.speak(u);}
+function iniciar(){setInterval(()=>{let a=new Date().toTimeString().slice(0,5);let h1=localStorage.getItem('banco_h1'),h2=localStorage.getItem('banco_h2'),h3=localStorage.getItem('banco_h3');if(a===h1)check('manha',a);if(a===h2)check('tarde',a);if(a===h3){check('noite',a);if(a==='20:00')sortear();}},60000)}
+function check(p,h){let hoje=new Date().toDateString();let k='last_'+h;if(localStorage.getItem(k)!==hoje){enviar(p);localStorage.setItem(k,hoje)}}
+window.onload=()=>{if(localStorage.getItem('banco_h1'))iniciar();renderG();atualizarMoedas();if(localStorage.getItem('banco_nome'))document.getElementById('nomeShow').innerText=localStorage.getItem('banco_nome');document.getElementById('dataHoje').innerText=new Date().toLocaleDateString('pt-BR');let hojeSort=localStorage.getItem('sorteio_'+new Date().toDateString());if(hojeSort)document.getElementById('sorteadoNome').innerHTML='🎉 '+hojeSort+' 🎉 (IA sorteou hoje)';}
+</script>
+</body>
+</html>
