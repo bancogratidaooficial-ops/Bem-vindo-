@@ -15,7 +15,11 @@ audio{width:100%;margin-top:8px}
 .saldo{font-size:28px;text-align:center;color:#4ade80;font-weight:bold}
 </style>
 </head>
-<body>
+<body><div style="display:flex;justify-content:center;gap:8px;margin:10px 0;flex-wrap:wrap">
+<button onclick="location.href='https://bancogratidaooficial-ops.github.io/Gratidao-Sonora/'" style="background:#FFD700;color:#000;border:none;padding:10px 16px;border-radius:20px;font-weight:bold">🎵 Sonora</button>
+<button onclick="location.href='https://bancogratidaooficial-ops.github.io/BANCO-GRATIDAO/'" style="background:#fff;color:#000;border:none;padding:10px 16px;border-radius:20px;font-weight:bold">🏦 Banco</button>
+<button onclick="location.href='https://bancogratidaooficial-ops.github.io/Bem-vindo-/'" style="background:#fff;color:#000;border:none;padding:10px 16px;border-radius:20px;font-weight:bold">👋 Bem-vindo</button>
+</div>
 <h1>Banco Gratidão v2.0</h1>
 <div class="card"><div class="saldo">R$ 1.247,33</div><div style="text-align:center;opacity:.7">Projeto Gratidão - Barco</div></div>
 
