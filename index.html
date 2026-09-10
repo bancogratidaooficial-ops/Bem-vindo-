@@ -1,54 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Banco Gratidão</title>
-<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
-body{background:#111;color:#fff}
-.box{max-width:400px;margin:auto;padding:20px}
-.card{background:#1e1e1e;border-radius:16px;padding:20px;margin:15px 0}
-.btn{width:100%;padding:16px;border-radius:12px;border:none;font-weight:800;margin-top:10px}
-.btn-y{background:#8A05BE;color:#fff}
-.pix{background:#2a2a2a;padding:12px;border-radius:10px;text-align:center;color:#00ff88;font-weight:bold}
-.qrbox{background:white;padding:15px;border-radius:15px;text-align:center}
+body{background:#000;color:#fff;font-family:Arial;padding:15px}
+.card-ia{background:#0a1628;border:2px solid #00aaff;border-radius:20px;padding:15px}
+.balao{background:#1e3a5f;border:1px solid #00aaff;border-radius:15px;padding:12px;margin:10px 0;color:#aaddff}
+.input-area{display:flex;gap:8px;margin:15px 0}
+.input-area input{flex:1;padding:12px;border-radius:25px;border:none;background:#111;color:#fff}
+.btn{border:none;padding:14px;border-radius:25px;font-weight:bold;cursor:pointer;width:100%;margin:6px 0}
+.btn-enviar{background:#00ccff;color:#000;width:auto;padding:12px 22px}
+.btn-ia{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000}
+.btn-azul{background:linear-gradient(90deg,#00ccff,#0099ff);color:#000}
+.box-musica{background:#111;border:1px solid #333;border-radius:20px;padding:15px;margin-top:20px}
+.btn-musica{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;margin:8px 0}
+.btn-add{width:90%;margin:12px auto;display:block;background:linear-gradient(90deg,#FFD700,#FFA500);color:#000}
 </style>
 </head>
 <body>
-<div class="box">
-<h1 style="text-align:center;color:#8A05BE">BANCO GRATIDÃO</h1>
 
-<div class="card">
-<h3>Área PIX - Valor Aberto</h3>
-<p style="font-size:13px;color:#aaa">A pessoa digita o valor que quiser</p>
-<div class="qrbox" style="margin-top:12px">
-<div id="qrcode" style="display:flex;justify-content:center"></div>
-<p style="color:black;font-size:12px;margin-top:8px">Chave: 41 99893-6718<br>José Marcos - Mercado Pago</p>
+<div class="card-ia">
+<div class="balao" style="background:#003300;border-color:#00ff66;color:#aaffaa;font-size:13px">Sua energia de gratidão está em 87% - ótimo momento para agradecer!</div>
+<div class="balao">Olá José! Eu sou sua IA da Gratidão 🤖✨ Fui treinada com milhares de mensagens de gratidão. Me diga: pelo que você é grato hoje?</div>
+<div class="input-area">
+<input id="inputGratidao" placeholder="Escreva pelo que é grato...">
+<button class="btn btn-enviar" onclick="document.getElementById('respostaIA').innerHTML='Gratidão registrada: '+document.getElementById('inputGratidao').value+' 🙏'">Enviar</button>
 </div>
-<div class="pix" id="copia">Chave: 41 99893-6718</div>
-<button class="btn btn-y" onclick="navigator.clipboard.writeText('41998936718');alert('Chave copiada!')">Copiar Chave Pix</button>
-<button class="btn btn-y" onclick="window.open('https://link.mercadopago.com.br/SEU_LINK_AQUI','_blank')">Pagar com Mercado Pago (Valor Livre)</button>
+<button class="btn btn-ia">✨ Gerar Afirmação de Gratidão com IA</button>
+<button class="btn btn-azul">🔍 Analisar Minha Gratidão</button>
+<p id="respostaIA" style="color:#FFD700"></p>
 </div>
 
-<div class="card">
-<h3>💰 Vaga de Fundador - R$1</h3>
-<p>Pague R$1 uma vez e ganhe R$50 de bônus</p>
-<button class="btn btn-y">ABRIR MINHA CONTA - R$1</button>
-</div>
+<div class="box-musica">
+<div style="color:#FFD700;font-size:18px;font-weight:bold">🎵 Músicas de Refeição e Esperança</div>
 
-</div>
+<!-- SEU BOTÃO NOVO AQUI - CORRIGIDO -->
+<button class="btn btn-add" onclick="document.getElementById('fileInputBanco').click()">+ 🎵 Add Música</button>
+<input type="file" id="fileInputBanco" accept="audio/*" multiple style="display:none">
+<div id="listaMusicaBanco"></div>
+
+<button class="btn btn-musica">🙏 1. Gratidão pela Reflexão (+R$100)</button><button onclick="document.getElementById('fileInputBanco').click()" style="width:90%;margin:12px auto;display:block;border:none;padding:14px;border-radius:25px;font-weight:bold;background:linear-gradient(90deg,#FFD700,#FFA500);color:#000">+ 🎵 Add Música</button>
+<input type="file" id="fileInputBanco" accept="audio/*" multiple style="display:none">
+<div id="listaMusicaBanco"></div>
 <script>
-// QR CODE PIX COM VALOR INDEFINIDO
-// Payload Pix SEM valor = valor aberto
-const payloadPix = "00020126360014BR.GOV.BCB.PIX0114+55419989367185204000053039865802BR5913JOSE MARCOS6008CURITIBA62070503***6304";
+document.getElementById('fileInputBanco').addEventListener('change',function(){for(let f of this.files){let u=URL.createObjectURL(f);let d=document.createElement('div');d.style="background:#1a1a1a;padding:10px;margin:8px;border-radius:12px;border:1px solid #FFD700;text-align:center";d.innerHTML=`<b>🎵 ${f.name}</b><audio controls src="${u}" style="width:100%"></audio>`;document.getElementById('listaMusicaBanco').appendChild(d)}});
+</script>
+<button class="btn btn-musica">💛 2. Gratidão pela Família (+R$150)</button>
+<button class="btn btn-musica">⭐ 3. Gratidão pela Vida (+R$200)</button>
+</div>
 
-// TROQUE A LINHA DE BAIXO PELO SEU LINK mpago.la DO PRINT
-const linkMercadoPago = "https://mpago.la/32D7sXx"; // <<< COLOQUE SEU LINK AQUI
-
-// Gera QR - Se tiver link do MP usa ele, senão usa Pix puro
-const dadoQR = linkMercadoPago.includes("SEU_LINK") ? payloadPix : linkMercadoPago;
-new QRCode(document.getElementById("qrcode"), {text: dadoQR, width: 200, height: 200});
+<script>
+const inputBanco = document.getElementById('fileInputBanco');
+const listaBanco = document.getElementById('listaMusicaBanco');
+inputBanco.addEventListener('change', function(){
+  for(let file of this.files){
+    const url = URL.createObjectURL(file);
+    const div = document.createElement('div');
+    div.style.cssText="background:#1a1a1a;padding:10px;margin:8px;border-radius:12px;border:1px solid #FFD700;text-align:center";
+    div.innerHTML=`<b>🎵 ${file.name}</b><br><audio controls src="${url}" style="width:100%"></audio>`;
+    listaBanco.appendChild(div);
+  }
+});
 </script>
 </body>
 </html>
